@@ -1,0 +1,115 @@
+.search-btn{
+  margin: 16rpx 2rpx;
+  color: white;
+  background-color: #04BE02;
+  border: none;
+  font-size: 32rpx;
+  line-height: 80rpx;
+  height: 80rpx;
+}
+
+.search-btn-view {
+  width: 98%;
+}
+
+.help-text {
+    margin-top: 30rpx;
+    margin-bottom: 15rpx;
+    padding-left: 15rpx;
+    padding-right: 15rpx;
+    color: #888;
+    font-size: 25rpx;
+    text-align:left;
+    width:96%;
+}
+
+.input-cell {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  width:100%;
+  padding: 10rpx 0;
+}
+
+.input-cell-hd{
+  padding-left:20rpx;
+  width: 120rpx;
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.input-cell-bd{
+  width: 100%;
+}
+
+.input-box{
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  width: 100%;
+  color: #555;
+}
+
+.search-result {
+ width:100%;
+}
+
+.book-links {
+  background-color: #FFFFFF;
+  line-height: 1.41176471;
+  font-size: 28rpx;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid #D9D9D9;
+}
+
+.book-link {
+    padding: 10px 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.book-navigator {
+  width: 99%
+}
+
+.link-icon{
+    content: " ";
+    display: inline-block;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    height: 6px;
+    width: 6px;
+    border-width: 2px 2px 0 0;
+    border-color: #C8C8CD;
+    border-style: solid;
+    position: relative;
+    top: -2px;
+    top: -1px;
+    margin-left: .3em;
+    text-align: right;
+    color: #888;
+}
+
+.error {
+  text-align: center;
+  width: 100%;
+  padding-top: 200rpx;
+}
+
+.error icon{
+  width: 100%;
+  padding-bottom: 30rpx;
+}
+
+.error text{
+  font-size: 30rpx;
+  color: #555;
+}

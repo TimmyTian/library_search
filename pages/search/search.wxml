@@ -1,0 +1,50 @@
+<import src="../template/template.wxml"/>
+<view class="container">
+    <view class="help-text">
+        <text>请输入想要查询的图书名</text>
+    </view>
+    <view class="input-cell">
+        <view class="input-cell-hd">
+            <text>书名</text>
+        </view>
+        <view class="input-cell-bd">
+            <input bindinput="bindSearchInput" type="text" auto-focus class="input-box" value="{{book_name}}" />
+        </view>
+    </view>
+    <template is="button" data="{{bindtapaction:'searchBooks', bcolor:'#04BE02', loading: loading, context:'搜索'}}"/>
+    <view class="search-result">
+        <view wx:if="{{book_count == 0 }}" class="error">
+            <icon type="safe_warn" size="70" color="orange"/>
+            <text>没有找到与关键词“{{book_name}}”有关的图书</text>
+        </view>
+        <view wx:if="{{is_alot}}">
+            <view class="help-text">
+                <text>
+                    关键词搜索结果 {{ book_count }} 个，仅显示前200条。
+                </text>
+            </view>
+        </view>
+        <view wx:elif="{{book_count > 0}}">
+            <view class="help-text">
+                <text>
+                    关键词搜索结果 {{ book_count }} 个。
+                </text>
+            </view>
+        </view>
+        <view wx:if="{{book_count > 0 }}" class="book-links">
+        <scroll-view scroll-y="true" style="height: {{ scroll_height }}px;">
+            <block wx:for="{{books}}" wx:for-item="book">
+                <view class="book-link">
+                    <navigator class="book-navigator" url="../detail/detail?marc_no={{book.marc_no}}" hover-class="navigator-hover">{{book.title}}</navigator>
+                    <view class="link-icon"></view>
+                </view>
+            </block>
+            <view class="help-text">
+                <text>
+                    以上内容来自西北工业大学图书馆系统搜索引擎搜索数据
+                </text>
+            </view>
+        </scroll-view>                
+        </view>
+    </view>
+</view>
