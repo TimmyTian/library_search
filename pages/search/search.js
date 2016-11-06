@@ -17,13 +17,13 @@ Page({
             book_count: -1,
             is_alot: false
         });
-        if(this.data.book_name.replace(/\s+/g, "") == ""){
+        if (this.data.book_name.replace(/\s+/g, "") == "") {
             this.setData({
-                button_bcolor:"#b2b2b2"
+                button_bcolor: "#b2b2b2"
             });
-        }else{
+        } else {
             this.setData({
-                button_bcolor:"#04BE02"
+                button_bcolor: "#04BE02"
             });
         }
     },
@@ -44,7 +44,7 @@ Page({
                     books: res.data.books,
                     is_alot: res.data.is_alot,
                     book_count: res.data.book_count
-                    });
+                });
             }
         })
     },
@@ -65,7 +65,7 @@ Page({
                     books: res.data.books,
                     is_alot: res.data.is_alot,
                     book_count: res.data.book_count
-                    });
+                });
             }
         })
     },
@@ -78,10 +78,10 @@ Page({
             that.update()
         });
         wx.getSystemInfo({
-            success: function(res) {
+            success: function (res) {
                 that.setData({
-                  scroll_height: res.windowHeight * 0.71
-                }) 
+                    scroll_height: res.windowHeight * 0.71
+                })
             }
         });
     }
