@@ -11,7 +11,7 @@
             <input bindinput="bindSearchInput" bindblur="autoSearch" type="text" class="input-box" value="{{book_name}}" />
         </view>
     </view>
-    <template is="button" data="{{bindtapaction:'searchBooks', bcolor:'#04BE02', loading: loading, context:'搜索'}}"/>
+    <template is="button" data="{{bindtapaction:'searchBooks', bcolor:button_bcolor, loading: loading, context:'搜索'}}"/>
     <view class="search-result">
         <view wx:if="{{book_count == 0 }}" class="error">
             <icon type="safe_warn" size="70" color="orange"/>

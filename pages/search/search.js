@@ -9,14 +9,23 @@ Page({
         book_count: -1,
         loading: false,
         scroll_height: 0,
-        button_bcolor: "#010101"
+        button_bcolor: "#b2b2b2"
     },
     bindSearchInput: function (e) {
         this.setData({
             book_name: e.detail.value,
             book_count: -1,
             is_alot: false
-        })
+        });
+        if(this.data.book_name.replace(/\s+/g, "") == ""){
+            this.setData({
+                button_bcolor:"#b2b2b2"
+            });
+        }else{
+            this.setData({
+                button_bcolor:"#04BE02"
+            });
+        }
     },
     autoSearch: function () {
         if (this.data.book_name === "") return;
