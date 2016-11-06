@@ -8,7 +8,8 @@ Page({
         books: [],
         book_count: -1,
         loading: false,
-        scroll_height: 0
+        scroll_height: 0,
+        button_bcolor: "#010101"
     },
     bindSearchInput: function (e) {
         this.setData({
@@ -17,15 +18,12 @@ Page({
             is_alot: false
         })
     },
-    searchBooks: function () {
+    autoSearch: function () {
         if (this.data.book_name === "") return;
-        wx.setNavigationBarTitle({
-                    title: '西工大图书查询 - '+ this.data.book_name
-                    });
         var that = this;
         that.setData({loading: true});
         wx.request({
-            url: 'http://cornerapp.applinzi.com/api/search',
+            url: 'https://cornerapp.applinzi.com/api/search',
             method: "POST",
             data: 'book=' + that.data.book_name,
             header: {
@@ -41,9 +39,25 @@ Page({
             }
         })
     },
-    onShow: function () {
-        wx.setNavigationBarTitle({
-            title: '西工大图书查询 - '+ this.data.book_name
+    searchBooks: function () {
+        if (this.data.book_name === "") return;
+        var that = this;
+        that.setData({loading: true});
+        wx.request({
+            url: 'https://cornerapp.applinzi.com/api/search',
+            method: "POST",
+            data: 'book=' + that.data.book_name,
+            header: {
+                'Content-Type': 'application/json'
+            },
+            success: function (res) {
+                that.setData({
+                    loading: false,
+                    books: res.data.books,
+                    is_alot: res.data.is_alot,
+                    book_count: res.data.book_count
+                    });
+            }
         })
     },
     onLoad: function () {

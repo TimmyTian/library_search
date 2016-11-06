@@ -1,6 +1,5 @@
 <import src="../template/template.wxml"/>
 <view wx:if='{{!mounted}}' class='loading'>
-<!--<view class='loading'>-->
     <view class='loading-image'>
         <image mode="aspectFit" src="../../src/img/loading-details.gif"></image>
     </view>

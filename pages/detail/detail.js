@@ -7,16 +7,11 @@ Page({
       book_name:"加载中...",
       mounted:false
   },
-  onReady: function () {
-    wx.setNavigationBarTitle({
-      title: this.data.book_name
-    })
-  },
   onLoad: function (options) {
     var that = this;
     setTimeout(function () {
         wx.request({
-            url: 'http://cornerapp.applinzi.com/api/detail',
+            url: 'https://cornerapp.applinzi.com/api/detail',
             method: "POST",
             data: 'marc_no=' + options.marc_no,
             header: {
@@ -30,9 +25,6 @@ Page({
                     book_name: res.data.book_name,
                     mounted: true
                     });
-                wx.setNavigationBarTitle({
-                  title: that.data.book_name
-                });
             }
             });
             }, 1000);

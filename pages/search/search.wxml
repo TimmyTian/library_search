@@ -8,7 +8,7 @@
             <text>书名</text>
         </view>
         <view class="input-cell-bd">
-            <input bindinput="bindSearchInput" type="text" auto-focus class="input-box" value="{{book_name}}" />
+            <input bindinput="bindSearchInput" bindblur="autoSearch" type="text" class="input-box" value="{{book_name}}" />
         </view>
     </view>
     <template is="button" data="{{bindtapaction:'searchBooks', bcolor:'#04BE02', loading: loading, context:'搜索'}}"/>

@@ -13,15 +13,12 @@
 }
 
 .help-text {
-    margin-top: 30rpx;
-    margin-bottom: 15rpx;
-    padding-left: 15rpx;
-    padding-right: 15rpx;
+    margin: 30rpx 15rpx 15rpx 15rpx;
     color: #888;
     font-size: 25rpx;
     text-align:left;
     width:96%;
-}
+  }
 
 .input-cell {
   display: flex;
@@ -70,6 +67,8 @@
 
 .book-link {
     padding: 10px 15px;
+    padding-left:0px; 
+    margin-left: 10px; 
     position: relative;
     display: flex;
     align-items: center;
