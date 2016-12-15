@@ -1,11 +1,12 @@
 page {
-    background-color: white;
+    /*background-color: f2f2f2;*/
     height: 100%;
 }
 
 .book-intro{
     background-color: #000000;
-    padding: 100rpx 0;
+    padding-top: 100rpx;
+    padding-bottom: 50rpx;
     color: white;
     text-align: center;
     width: 100%;
@@ -27,20 +28,26 @@ page {
     padding-top: 20rpx;
 }
 
+.fav_image {
+    width: 64rpx;
+    height: 59rpx;
+    padding-top: 40rpx;
+}
+
 .detail-cells {
     font-size: 30rpx;
     margin-top:20rpx;
     border-top: 1px solid #E5E5E5;
     border-bottom: 1px solid #E5E5E5;
+    background-color: white;
     width: 100%;
 }
 
 
 .detail-cell {
-    background-color: white;
     padding-top: 30rpx;
     padding-bottom: 30rpx;
-    padding-left: 30rpx;
+    margin-left: 30rpx;
 }
 
 .book-code {
